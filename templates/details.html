@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ movie.title }}</title>
+</head>
+<body>
+    <h1>{{ movie.title }} ({{ movie.year }})</h1>
+    <h3>{{ movie.rating }}</h3>
+    <h3>{{ movie.review  }}</h3>
+    <p>{{ movie.description }}</p>
+    <button type="submit"><a href="{{ url_for('update', title=movie.title) }}">Update</a></button>
+    <button type="submit"><a href="{{ url_for('delete_movie', title=movie.title) }}">Delete</a></button>
+    <button><a href="{{ url_for('home') }}">Home</a></button>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+</head>
+<body>
+  <h1>Search Results</h1>
+  {% for movie in movies: %}
+  <ul>
+    <li><a href="{{ url_for('add_to_db', id=movie['id']) }}">{{ movie['title'] }} - {{ movie['release_date'] }}</a></li>
+  </ul>
+{% endfor %}
+</body>
+</html>

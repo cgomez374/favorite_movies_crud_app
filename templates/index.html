@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Watch List</title>
+</head>
+<body>
+    <h1>My Movie Watch List</h1>
+    {% for movie in movies: %}
+    <ul>
+        <li>{{ movie.ranking }} : <a href="{{ url_for('movie_details', title=movie['title']) }}"><img src="{{ movie['img_url'] }}" alt="movie poster"></a></li>
+    </ul>
+    {% endfor %}
+    <button type="submit"><a href="{{ url_for('add') }}">Add Movie</a></button>
+</body>
+</html>
