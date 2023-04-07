@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Add a Movie</title>
+    <link rel="stylesheet" href="../static/index.css">
 </head>
 <body>
-    <h1>Add a movie</h1>
-    <form action="{{ url_for('add') }}" method="post">
-        <label>Movie Title</label>
-        <input type="text" placeholder="Enter movie title" name="title" required>
+    <nav>
+        <h1><a href="{{ url_for('home') }}">Movie Library</a></h1>
+    </nav>
+    <form action="{{ url_for('add') }}" method="post" class="form" id="add_form">
+        <div>
+            <label>Enter title of movie: </label>
+            <input type="text" placeholder="Enter movie title" name="title" required>
+        </div>
         <button type="submit">Add</button>
     </form>
 </body>

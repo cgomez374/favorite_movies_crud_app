@@ -7,18 +7,18 @@
 </head>
 <body>
     <nav>
-        <h1><a href="{{ url_for('home') }}">My Movie Watch List</a></h1>
+        <h1><a href="{{ url_for('home') }}">Movie Library</a></h1>
     </nav>
   <form action="{{ url_for('update', title=title) }}" method="post" class="form">
       <div>
           <label>New Rating (Out of 10, e.g. 7.5):</label>
-          <input type="number" placeholder="new rating" name="new_rating">
+          <input type="number" placeholder="new rating" name="new_rating" required>
       </div>
       <div>
           <label>Your review:</label>
-          <input type="text" placeholder="Enter movie review" name="movie_review">
+          <input type="text" placeholder="Enter movie review" name="movie_review" required>
       </div>
-    <button type="submit">Done</button>
+    <button type="submit" step="0.01" min="0">Done</button>
   </form>
 </body>
 </html>

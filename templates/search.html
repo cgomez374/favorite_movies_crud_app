@@ -3,13 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Search Results</title>
+    <link rel="stylesheet" href="../static/index.css">
 </head>
 <body>
-  <h1>Search Results</h1>
-  {% for movie in movies: %}
-  <ul>
-    <li><a href="{{ url_for('add_to_db', id=movie['id']) }}">{{ movie['title'] }} - {{ movie['release_date'] }}</a></li>
-  </ul>
-{% endfor %}
+    <nav>
+        <h1><a href="{{ url_for('home') }}">Movie Library</a></h1>
+    </nav>
+    <ul id="search_results">
+        {% for movie in movies: %}
+        <li>
+            <a href="{{ url_for('add_to_db', id=movie['id']) }}">
+                <img src="https://image.tmdb.org/t/p/w500/{{ movie['poster_path'] }}" alt="movie poster">
+            </a>
+            <p>{{ movie['title'][0:20] }}...</p>
+        </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
