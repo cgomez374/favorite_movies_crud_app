@@ -3,13 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Update Movie Rating</title>
+    <link rel="stylesheet" href="../static/index.css">
 </head>
 <body>
-  <form action="{{ url_for('update', title=title) }}" method="post">
-    <label>New Rating (Out of 10, e.g. 7.5):</label>
-    <input type="number" placeholder="new rating" name="new_rating">
-    <label>Your review:</label>
-    <input type="text" placeholder="Enter movie review" name="movie_review">
+    <nav>
+        <h1><a href="{{ url_for('home') }}">My Movie Watch List</a></h1>
+    </nav>
+  <form action="{{ url_for('update', title=title) }}" method="post" class="form">
+      <div>
+          <label>New Rating (Out of 10, e.g. 7.5):</label>
+          <input type="number" placeholder="new rating" name="new_rating">
+      </div>
+      <div>
+          <label>Your review:</label>
+          <input type="text" placeholder="Enter movie review" name="movie_review">
+      </div>
     <button type="submit">Done</button>
   </form>
 </body>
