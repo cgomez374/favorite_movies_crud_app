@@ -3,14 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Movie Watch List</title>
+    <link rel="stylesheet" href="../static/index.css">
 </head>
 <body>
-    <h1>My Movie Watch List</h1>
-    {% for movie in movies: %}
-    <ul>
-        <li>{{ movie.ranking }} : <a href="{{ url_for('movie_details', title=movie['title']) }}"><img src="{{ movie['img_url'] }}" alt="movie poster"></a></li>
+    <nav>
+        <h1>My Movie Watch List</h1>
+    </nav>
+    <ul class="track">
+        {% for movie in movies: %}
+        <li>
+            <a href="{{ url_for('movie_details', title=movie['title']) }}"><img src="{{ movie['img_url'] }}" alt="movie poster"></a>
+            <p>Ranking: {{ movie.ranking }}</p>
+        </li>
+        {% endfor %}
     </ul>
-    {% endfor %}
-    <button type="submit"><a href="{{ url_for('add') }}">Add Movie</a></button>
+    <div class="button">
+        <button type="submit"><a href="{{ url_for('add') }}">Add Movie</a></button>
+    </div>
 </body>
 </html>
